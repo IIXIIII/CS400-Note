@@ -1,0 +1,65 @@
+Web Programing 
+Web Server
+
+WebServer.java
+
+public class WebServer {
+  public static main
+    //server obj
+    HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0 );
+    HttpContext context = server.createContext("/");
+    context.setHandler( (exchange) -> {
+    
+    system.out.println ("") 
+
+    String response = "requested path: " + exchange.getRequestURI().toString();
+
+    exchange.getResponseHeaders().add("Content-type", "test/plain");
+    exchange.sendresponseHeaders(200, response.length());
+
+    OutputStream responseStream = exchange.getresponseBody();
+    responseStream.write(response.getBytes());
+    
+
+    });
+
+    server.start;
+        
+
+
+       
+
+run:
+    sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8000
+
+//exit 
+^C
+
+
+
+//==========================
+index.html
+
+  <!DOCTYPE html>
+  <html>
+
+  </heml>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
